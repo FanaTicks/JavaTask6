@@ -43,13 +43,13 @@ const getExapless = (examplesCount) => new Promise((onSuccess) => {
 
 const fetchExapless = ({ examplesCount }) => (dispatch) => {
 
-    dispatch(requestExapless()); // Повідомляю стору, що роблю запит користувачів
+    dispatch(requestExapless());
 
-    return getExapless(examplesCount) // Викликаю функцію запиту студентів
+    return getExapless(examplesCount)
 
-        .then(exaples => dispatch(receiveExapless(exaples))) // Успіх
+        .then(exaples => dispatch(receiveExapless(exaples)))
 
-        .catch(() => dispatch(errorReceiveExapless())); // Помилка
+        .catch(() => dispatch(errorReceiveExapless()));
 
 };
 
