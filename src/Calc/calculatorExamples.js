@@ -1,6 +1,7 @@
 
 const calculExamples = ({ress,updateHistoryExamples,updateData}) =>{
     let res = 0;
+    let resHistory = "";
 
     const pattern = /\d+/g // соответствует всем вхождениям одной или более цифр
     const pattern4 = /\D/g // соответствует всем вхождениям одного символа, который не является цифрой в базовом латинском алфавите
@@ -12,7 +13,11 @@ const calculExamples = ({ress,updateHistoryExamples,updateData}) =>{
         arr = example.name.match(pattern);
         arr4 = example.name.match(pattern4);
 
-        if (arr[1]) {
+        if(example.name.includes('.')){
+            res = "Не целое число";
+            resHistory = "Не целое число";
+
+        }else if (arr[1]) {
             if (arr4[0] === "+") {
                 res = parseInt(arr[0]) + parseInt(arr[1])
             } else if (arr4[0] === "-") {
@@ -22,8 +27,12 @@ const calculExamples = ({ress,updateHistoryExamples,updateData}) =>{
             } else if (arr4[0] === "/") {
                 res = parseInt(arr[0]) / parseInt(arr[1]);
             }
+            if (String(res)==="Infinity"){
+                res = "Нельзя делить на ноль";
+            }
+            resHistory = example.name + "=" + res;
         }
-        historyList.push(example.name + "=" + res);
+        historyList.push(resHistory);
         res=0;
     })
 

@@ -21,10 +21,10 @@ const getExapless = (examplesCount) => new Promise((onSuccess) => {
 
             .map(index => ({ name: `3+${index}`}))),
 
-        1000
+        2000
 
         /* or
-             return  fetch('http://localhost:8080/math/expamples/4', {
+             return  fetch('http://localhost:8080/math/expamples/5', {
                  method: 'GET',
                  withCredentials: true,
                  crossorigin: true,
