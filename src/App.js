@@ -86,7 +86,7 @@ class App extends React.Component {
         <div>
           <h2>Calculator</h2>
           <div>
-            <input type={"text"} value={result}/>
+            <input type={"text"} value={result} readOnly/>
             <div>
               <Button variant="text" onClick={() => this.setState({result: result + "7"})}>7</Button>
               <Button variant="text" onClick={() => this.setState({result: result + "8"})}>8</Button>
