@@ -23,20 +23,6 @@ const getExapless = (examplesCount) => new Promise((onSuccess) => {
 
         2000
 
-        /* or
-             return  fetch('http://localhost:8080/math/expamples/5', {
-                 method: 'GET',
-                 withCredentials: true,
-                 crossorigin: true,
-                 mode: 'no-cors',
-             })
-                 .then((res) => res.json())
-                 .then((data) => {
-                 console.log(data);
-             })
-                 .catch((error) => {
-                 console.log(error);
-             })*/
     );
 
 });
