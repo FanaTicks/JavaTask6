@@ -6,12 +6,15 @@ let resHistory = "";
 
 const resultCalc = (ress,arr,arr4) =>{
     if(ress.includes('.')){
-        res = "Не целое число";
+        res = "0";
         resHistory = "Не целое число";
 
     }else if(arr4[0] === "-" && arr4[1]){
-        res = "Отрицательное число";
+        res = "0";
         resHistory = "Отрицательное число";
+    }else if(arr[1] === "0"){
+        res = "0";
+        resHistory = "Нельзя делить на ноль";
     } else if (arr[1]) {
         if (arr4[0] === "+") {
             res = parseInt(arr[0]) + parseInt(arr[1])
@@ -21,9 +24,6 @@ const resultCalc = (ress,arr,arr4) =>{
             res = parseInt(arr[0]) * parseInt(arr[1]);
         } else if (arr4[0] === "/") {
             res = parseInt(arr[0]) / parseInt(arr[1]);
-        }
-        if (String(res)==="Infinity"){
-            res = "Нельзя делить на ноль";
         }
         resHistory = ress + "=" + res;
     }
