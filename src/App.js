@@ -67,6 +67,21 @@ class App extends React.Component {
 
     }
 
+    const doubleSign = (sign) => {
+      if(result.includes("+") || result.includes("-") || result.includes("*") || result.includes("/")){
+        calcul.calcul({
+          updateData: updateData,
+          updateHistory: updateHistory,
+          ress: result,
+          doubleSigns: sign,
+        });
+
+      }else {
+        this.setState({result: result + sign});
+        }
+
+      }
+
     return (
         <div>
           <h2>Calculator</h2>
@@ -76,19 +91,19 @@ class App extends React.Component {
               <Button variant="text" onClick={() => this.setState({result: result + "7"})}>7</Button>
               <Button variant="text" onClick={() => this.setState({result: result + "8"})}>8</Button>
               <Button variant="text" onClick={() => this.setState({result: result + "9"})}>9</Button>
-              <Button variant="text" onClick={() => this.setState({result: result + "*"})}>*</Button>
+              <Button variant="text" onClick={() => doubleSign("*")}>*</Button>
             </div>
             <div>
               <Button variant="text" onClick={() => this.setState({result: result + "4"})}>4</Button>
               <Button variant="text" onClick={() => this.setState({result: result + "5"})}>5</Button>
               <Button variant="text" onClick={() => this.setState({result: result + "6"})}>6</Button>
-              <Button variant="text" onClick={() => this.setState({result: result + "-"})}>-</Button>
+              <Button variant="text" onClick={() => doubleSign("-")}>-</Button>
             </div>
             <div>
               <Button variant="text" onClick={() => this.setState({result: result + "1"})}>1</Button>
               <Button variant="text" onClick={() => this.setState({result: result + "2"})}>2</Button>
               <Button variant="text" onClick={() => this.setState({result: result + "3"})}>3</Button>
-              <Button variant="text" onClick={() => this.setState({result: result + "+"})}>+</Button>
+              <Button variant="text" onClick={() => doubleSign("+")}>+</Button>
             </div>
             <div>
               <Button variant="text" onClick={() => this.setState({result: result + "0"})}>0</Button>
@@ -101,7 +116,7 @@ class App extends React.Component {
                       })
               }>=</Button>
               <Button variant="text" onClick={clear}>C</Button>
-              <Button variant="text" onClick={() => this.setState({result: result + "/"})}>&divide;</Button>
+              <Button variant="text" onClick={() => doubleSign("/")}>&divide;</Button>
             </div>
             <div>
               <Provider store={store}>

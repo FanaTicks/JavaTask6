@@ -52,13 +52,18 @@ const calculExamples = ({ress,updateHistoryExamples,updateData}) =>{
 
 
 
-const calcul = ({ress,updateHistory,updateData}) =>{
+const calcul = ({ress,updateHistory,updateData,doubleSigns}) =>{
 
     const arr = ress.match(pattern);
     const arr4 = ress.match(pattern4);
 
     resultCalc(ress,arr,arr4);
-    updateData(res);
+    if(doubleSigns){
+        updateData(res + doubleSigns);
+
+    }else{
+        updateData(res);
+    }
     updateHistory(resHistory);
 };
 
