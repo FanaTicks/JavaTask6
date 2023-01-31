@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import Exapmles from './pages';
 import {combineReducers, createStore} from 'redux';
 import {Provider} from "react-redux";
-import exaplesReducer from './pages/Reducers/example';
+import exaplesReducer from './pages/reducers/example';
 import calcul from './Calc/calculator';
 
 

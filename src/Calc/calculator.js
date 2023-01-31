@@ -12,7 +12,7 @@ const resultCalc = (ress,arr,arr4) =>{
     }else if(arr4[0] === "-" && arr4[1]){
         res = "0";
         resHistory = "Отрицательное число";
-    }else if(arr[1] === "0"){
+    }else if(arr[1] === "0" && arr4[0] === "/"){
         res = "0";
         resHistory = "Нельзя делить на ноль";
     } else if (arr[1]) {
@@ -57,18 +57,17 @@ const calcul = ({ress,updateHistory,updateData,doubleSigns}) =>{
     const arr = ress.match(pattern);
     const arr4 = ress.match(pattern4);
 
-    if(!arr[1] && !doubleSigns){
+    if(!arr[1] && !doubleSigns && (ress.includes("+") || ress.includes("-") || ress.includes("*") || ress.includes("/"))){
         updateData(ress);
     }else if(!arr[1] && doubleSigns){
         updateData(arr[0]+doubleSigns);
     } else {
-
         resultCalc(ress,arr,arr4);
         if(doubleSigns){
             updateData(res + doubleSigns);
 
         }else{
-            updateData(res);
+            updateData(String(res));
         }
         updateHistory(resHistory);
     }
