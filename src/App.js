@@ -34,7 +34,7 @@ class App extends React.Component {
     } = this.state
 
     const listItems = history.map((number) =>
-        <li  key={number}>{number}</li>
+        <li  key={Math.random() + " " + number}>{number}</li>
     );
 
     const clear = () => {
