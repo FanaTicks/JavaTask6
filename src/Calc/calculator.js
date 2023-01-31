@@ -57,9 +57,11 @@ const calcul = ({ress,updateHistory,updateData,doubleSigns}) =>{
     const arr = ress.match(pattern);
     const arr4 = ress.match(pattern4);
 
-    if(!arr[1]){
+    if(!arr[1] && !doubleSigns){
         updateData(ress);
-    }else {
+    }else if(!arr[1] && doubleSigns){
+        updateData(arr[0]+doubleSigns);
+    } else {
 
         resultCalc(ress,arr,arr4);
         if(doubleSigns){
