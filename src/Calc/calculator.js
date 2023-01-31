@@ -9,7 +9,10 @@ const resultCalc = (ress,arr,arr4) =>{
         res = "Не целое число";
         resHistory = "Не целое число";
 
-    }else if (arr[1]) {
+    }else if(arr4[0] === "-" && arr4[1]){
+        res = "Отрицательное число";
+        resHistory = "Отрицательное число";
+    } else if (arr[1]) {
         if (arr4[0] === "+") {
             res = parseInt(arr[0]) + parseInt(arr[1])
         } else if (arr4[0] === "-") {

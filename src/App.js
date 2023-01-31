@@ -55,7 +55,7 @@ class App extends React.Component {
 
     const updateHistoryExamples = (value) => {
 
-      for (var i = 0; i < value.length; i++) {
+      for (let i = 0; i < value.length; i++) {
 
         if(history.length>3){
           history.shift();
