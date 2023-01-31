@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import exaplesActions from '../actions/examplesActions';
-import calcul from '../../Calc/calculatorExamples';
+import calcul from '../../Calc/calculator';
 import Button from "@material-ui/core/Button";
 
 class Examples extends React.Component{

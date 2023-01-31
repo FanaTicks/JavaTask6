@@ -46,7 +46,7 @@ class App extends React.Component {
     }
 
     const updateHistory = (value) => {
-      if(history.length>3){
+      if(history.length>7){
         history.shift();
         this.setState({history: [...history,value]});
       }else { this.setState({history: [...history,value]});
@@ -93,11 +93,13 @@ class App extends React.Component {
             <div>
               <Button variant="text" onClick={() => this.setState({result: result + "0"})}>0</Button>
               <Button variant="text" onClick={() =>
-                  calcul.calcul({
-                    updateData: updateData,
-                    updateHistory: updateHistory,
-                        ress: result,
-                      })}>=</Button>
+
+                    calcul.calcul({
+                      updateData: updateData,
+                      updateHistory: updateHistory,
+                      ress: result,
+                      })
+              }>=</Button>
               <Button variant="text" onClick={clear}>C</Button>
               <Button variant="text" onClick={() => this.setState({result: result + "/"})}>&divide;</Button>
             </div>
